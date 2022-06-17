@@ -1,0 +1,20 @@
+name: yy
+source: jj-qsvdk
+type: raw_sql
+rawSql: |-
+  SELECT 
+    c.customer_id,
+    c.first_name,
+    c.last_name,
+    c.email,
+    c.ltv,
+    c.city,
+    COUNT(e.price) as total_items
+  FROM public.customers c
+  JOIN public.events e ON c.customer_id = e.customer_id
+  WHERE state = 'Florida'
+  AND event_name = 'Item Added'
+  GROUP BY 1,2,3,4,5,6
+  HAVING COUNT(e.price) > 1
+isSchema: false
+primaryKey: customer_id
