@@ -1,0 +1,14 @@
+model: yy-5cdc5
+destination: kk-vy1ex
+config:
+  mode: mirror
+  mappings:
+    - to: City
+      from: city
+      type: standard
+  sheetName: Company ideas
+  spreadsheetId: 1n9S5n9dVRA9OkRMuU6ahps55XhdvzuTBmj5FNQro18M
+  autoSyncColumns: false
+schedule:
+  type: manual
+schedulePaused: false
